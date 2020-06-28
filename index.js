@@ -8,7 +8,6 @@ const app = express()
 app.use(express.json())
 app.use(express.static('build'))
 
-
 morgan.token('body', (req) => {
 	return JSON.stringify(req.body)
 })
@@ -45,7 +44,6 @@ app.get('/info', (req, res, next) => {
 			res.send(info)
 		})
 		.catch(error => next(error))
-
 })
 
 
@@ -59,7 +57,6 @@ app.get('/api/persons/:id', (request, response, next) => {
 			}
 		})
 		.catch(error => next(error))
-
 })
 
 
